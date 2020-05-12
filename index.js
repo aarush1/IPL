@@ -12,6 +12,8 @@ const tossEff = require("./ipl/tossEff");
 const MATCHES_FILE_PATH = "./csv_data/matches.csv";
 const DELIVERIES_FILE_PATH = "./csv_data/deliveries.csv";
 const JSON_OUTPUT_FILE_PATH = "./public/data.json";
+const JSON_OUTPUT_FILE_PATH_1 = "./public/runs.json";
+
 
 function main() {
   csv()
@@ -24,7 +26,7 @@ function main() {
           let result1 = matchesWon(matches);
           let result2 = mostWins(matches);
           let result3 = bestEco(matches,deliveries,"2015");
-          let result4 = extraRuns(matches,deliveries,"2016");
+          let result4 = extraRuns(matches,deliveries);
           let result5 = tossEff(matches);
 
           saveMatchesPlayedPerYear(result, result1, result2,result3,result4,result5);
@@ -40,13 +42,25 @@ function saveMatchesPlayedPerYear(result, result1, result2,result3,result4,resul
     matchesWon: result1,
     mostWins: result2,
     bestEco: result3,
-    extraRuns: result4,
+    //extraRuns: result4,
     tossEff: result5
+
+  };
+
+
+  const runsData = {
+    extraRuns: result4
 
   };
 
   const jsonString = JSON.stringify(jsonData);
   fs.writeFile(JSON_OUTPUT_FILE_PATH, jsonString, "utf8", err => {
+    if (err) {
+      console.error(err);
+    }
+  });
+  const jsonString1 = JSON.stringify(runsData);
+  fs.writeFile(JSON_OUTPUT_FILE_PATH_1, jsonString1, "utf8", err => {
     if (err) {
       console.error(err);
     }

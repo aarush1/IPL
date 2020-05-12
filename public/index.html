@@ -7,6 +7,15 @@
     <meta name="description" content="IPL visualization">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <link href="./styles.css" rel="stylesheet">
+    <style>
+      .s {
+        box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.5);
+        padding: 15px;
+      }
+      h1 {
+        text-align: center;
+      }
+    </style>
     <title>
         IPL visualization
     </title>
@@ -14,11 +23,47 @@
 
 <body>
     <h1>IPL Dataset visualization</h1>
-    <div id="matches-played-per-year" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-    <div id="container2" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-    <div id="container3" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-    <div id="container4" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-    <div id="container5" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+    <div id="matches-played-per-year" class="s"
+    style="width: 1130px; height: 500px; margin: 0 auto; margin-top: 50px"></div>
+    
+    <div id="container2" class="s"
+    style="width: 1130px; height: 500px; margin: 0 auto; margin-top: 50px"></div>
+
+      
+    <div id="container3" class="s"
+    style="width: 1130px; height: 500px; margin: 0 auto; margin-top: 50px"></div>
+    <div style="width: 1130px; height: 50px; margin: 0 auto; margin-top: 20px ">
+      <h3>
+        <b>Select the season to get extra runs</b>
+      </h3>
+      <select id="imp" name="imp">
+        <option value="" selected disabled hidden>Choose here</option>
+        <option value="2008">2008</option>
+        <option value="2009">2009</option>
+        <option value="2010">2010</option>
+        <option value="2011">2011</option>
+        <option value="2012">2012</option>
+        <option value="2013">2013</option>
+        <option value="2014">2014</option>
+        <option value="2015">2015</option>
+        <option value="2016">2016</option>
+        <option value="2017">2017</option>
+        <option value="2018">2018</option>
+        <option value="2019">2019</option>
+      </select>
+      <button type="button" onclick="disp()">Show</button>
+    </div><br>
+    
+    
+
+    <div id="container4" class="s"
+     style="width: 1130px; height: 500px; margin: 0 auto; margin-top: 50px">
+    </div>
+  
+
+    <div id="container5" class="s"
+    style="width: 1130px; height: 500px; margin: 0 auto; margin-top: 50px">
+  </div>
 
 
 
@@ -26,5 +71,7 @@
     <script src="https://code.highcharts.com/highcharts.js"></script>
 
     <script src="./app.js"></script>
+    <script src="./display.js"></script>
+
 
 </body>

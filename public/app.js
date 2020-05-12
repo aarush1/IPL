@@ -10,7 +10,7 @@ function visualizeData(data) {
   visualizeMatchesPlayedPerYear(data.matchesPlayedPerYear);
   visualizeMatchesWon(data.matchesWon,data.mostWins);
   visualizebestEco(data.bestEco);
-  visualizeextraRuns(data.extraRuns);
+  //visualizeextraRuns(data.extraRuns);
   visualizetossEff(data.tossEff);
   
   return;
@@ -144,7 +144,7 @@ function visualizebestEco(bestEco) {
   });
 }
 
-  function visualizeextraRuns(extraRuns) {
+  /*function visualizeextraRuns(extraRuns) {
     const seriesData = [];
     for (let year in extraRuns) {
       seriesData.push([year, extraRuns[year]]);
@@ -177,7 +177,7 @@ function visualizebestEco(bestEco) {
         }
       ]
     });
-  }
+  }*/
 
   function visualizetossEff(tossEff)
   {
